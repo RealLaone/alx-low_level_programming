@@ -9,11 +9,11 @@ int main(void)
 	int l = 97;
 	int u = 65;
 
-	for (l <= 122)
+	while (l <= 122)
 	{
 		putchar(l);
 	}
-	for (u <= 90);
+	while (u <= 90)
 	{
 		putchar(u);
 	}
