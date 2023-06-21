@@ -5,7 +5,7 @@
 
 /**
  *main - Entry point
- *Discription: 'Code to assign random number to variable n each time it is executed'
+ *Discription: 'Code to assign random number to variable n'
  *Return: Always 0 (Success)
  */
 int main(void)
@@ -22,7 +22,7 @@ int main(void)
 	{
 		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10);
 	}
-	else (n == 0);
+	else
 	{
 		printf("Last digit of %d is %d and is 0\n", n, n % 10);
 	}
