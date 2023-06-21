@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*
  * main - Entry point
- * Discription: 'Print lowercase alphabets except some'
+ * Description: 'Print lowercase alphabets except some'
  * Return: Always 0
 */
 int main(void)
