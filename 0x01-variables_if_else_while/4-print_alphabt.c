@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  * main - Entry point
  * Description: 'Print lowercase alphabets except some'
  * Return: Always 0
