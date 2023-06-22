@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * Description: 'single digit numbers from zero to ten'
- * Return: Always 0 
+ * Return: Always 0
  */
 int main(void)
 {
