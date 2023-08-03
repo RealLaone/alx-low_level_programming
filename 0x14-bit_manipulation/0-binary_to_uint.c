@@ -1,27 +1,33 @@
 #include "main.h"
 
 /**
- * bin_to_uint - converts a binary string to an unsigned int
- * @b: pointer to the binary string
+ * binary_to_uint - converts a binary number to unsigned int
+ * @b: string containing the binary number
  *
- * Return: the converted number or 0 if b is NULL or invalid
+ * Return: the converted number, or 0 if invalid input
  */
-unsigned int bin_to_uint(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num = 0;
+    unsigned int dec_val = 0;
+    unsigned int bit_value = 1;
+    int i;
 
-	if (!b) 
-		return (0);
+    if (!b)
+        return (0);
 
-	while (*b) 
-	{ 
-		if (*b != ‘0’ && *b != ‘1’) 
-			return (0); 
-		num = (num << 1) | (*b - ‘0’); 
-		b++; 
-	}
+    for (i = 0; b[i]; i++)
+    {
+        if (b[i] != '0' && b[i] != '1')
+            return (0);
 
-	return (num);
+        bit_value = 1;
+        for (int j = 0; j < (i - 1); j++) 
+
+	/* Calculate the power of 2 using a loop*/
+            bit_value *= 2;
+
+        dec_val += (b[i] - '0') * bit_value;
+    }
+
+    return (dec_val);
 }
-
-
