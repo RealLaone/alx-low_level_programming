@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
 	buffer = create_buffer(argv[2]); /* Allocate buffer */
 	from = open(argv[1], O_RDONLY); /* Open file_from in read-only mode */
 	r = read(from, buffer, 1024); /* Read data into the buffer */
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664); /* Open file_to with specific flags */
+	/* Open file_to with specific flags */
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		/* Check for read errors */
 		if (from == -1 || r == -1)
 		{
-			/* Print an error message to stderr, free buffer, and exit with code 98 */
+			/* Print error message to stderr, free buffer, & exit with code 98 */
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
@@ -98,7 +98,9 @@ int main(int argc, char *argv[])
 		r = read(from, buffer, 1024);
 		/* Open file_to in append mode */
 		to = open(argv[2], O_WRONLY | O_APPEND);
-	} while (r > 0);
+	}
+
+	while (r > 0);
 
 	free(buffer); /* Free the allocated buffer */
 	close_file(from); /* Close file_from */
